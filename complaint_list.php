@@ -23,7 +23,7 @@
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     if ($conn->connect_error) {
-        die("Bağlantı hatası: " . $conn->connect_error);
+        die("Connection Error: " . $conn->connect_error);
     }
 
     $sql = "SELECT * FROM complaints";

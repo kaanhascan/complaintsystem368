@@ -7,14 +7,14 @@ $password = "";
 $conn = new mysqli($servername, $username, $password);
 
 if ($conn->connect_error) {
-    die("Bağlantı hatası: " . $conn->connect_error);
+    die("Connection Error: " . $conn->connect_error);
 }
 
 $sql = "CREATE DATABASE IF NOT EXISTS complaint_system";
 if ($conn->query($sql) === TRUE) {
     echo "Created<br>";
 } else {
-    echo "Failed " . $conn->error . "<br>";
+    echo "Creation Failed" . $conn->error . "<br>";
 }
 
 $conn->select_db("complaint_system");

@@ -7,7 +7,7 @@ $dbname = "complaint_system";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
-    die("Bağlantı hatası: " . $conn->connect_error);
+    die("Connection Error: " . $conn->connect_error);
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($conn->query($sql) === TRUE) {
             echo "Your complaint has been successfully sent!";
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error:" . $sql . "<br>" . $conn->error;
         }
 
 
